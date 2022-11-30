@@ -1,4 +1,4 @@
-OBJS = build/main.o build/crc.o build/uart_wp.o
+OBJS = build/main.o build/crc.o build/uart_wp.o build/interface.o
 CFLAGS = -g -Wall
 
 all: app
@@ -11,6 +11,9 @@ build/%.o: crc/%.c crc/%.h
 	gcc $(CFLAGS) -c $< -o $@
 
 build/%.o: uart_wp/%.c uart_wp/%.h
+	gcc $(CFLAGS) -c $< -o $@
+
+build/%.o: utils/%.c utils/%.h
 	gcc $(CFLAGS) -c $< -o $@
 
 build/main.o: main.c

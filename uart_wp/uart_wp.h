@@ -1,7 +1,7 @@
 #ifndef UART_WP_H
 #define UART_WP_H
 
-#include "com_types.h"
+#include "../utils/com_types.h"
 
 extern com_data_t com;
 
